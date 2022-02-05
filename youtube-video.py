@@ -6,7 +6,7 @@ import sys
 SAVE_PATH = "C:/Downloads" #to_do
 
 # link of the video to be downloaded
-link= sys.arg[1]
+link= sys.argv[1]
 
 try:
 	# object creation using YouTube
