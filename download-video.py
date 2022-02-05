@@ -2,6 +2,7 @@ import requests
 import json
 import sys
 import urllib
+import webbrowser
 
 url = "https://youtube-downloader9.p.rapidapi.com/"
 
@@ -19,7 +20,7 @@ def main():
   response = requests.request("GET", video_url, headers=headers)
   video = response.json()[0]["url"]
   print(video)
-  urllib.request.urlretrieve(video, "video_name.mp4")
+  webbrowser.open_new(video)
 
 
 if __name__ == "__main__":
