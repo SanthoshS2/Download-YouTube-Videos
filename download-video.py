@@ -9,9 +9,10 @@ headers = {
     }
 
 def main():
-  video_format = input()
-  video_id = input()
-  video_url = url + video_id + "/" + video_format
+#   video_format = input()
+#   video_id = input()
+#   video_url = url + video_id + "/" + video_format
+  video_url = url + ${{ github.event.inputs.video_format }} + "/" + ${{ github.event.inputs.video_format }}  
   response = requests.request("GET", video_url, headers=headers)
   video = response.json()[0]["url"]
   print(video)
