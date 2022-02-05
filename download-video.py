@@ -14,10 +14,10 @@ def main():
 #   video_id = input()
 #   video_url = url + video_id + "/" + video_format
   video_url = url + sys.argv[2] + "/" + sys.argv[1] 
+  print(video_url)
   response = requests.request("GET", video_url, headers=headers)
   video = response.json()[0]["url"]
   print(video)
-  requests.get(video)
 
 
 if __name__ == "__main__":
