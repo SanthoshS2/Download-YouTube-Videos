@@ -17,6 +17,7 @@ except:
 
 # filters out all the files with "mp4" extension
 mp4files = yt.streams.filter(file_extension='mp4')
+print(mp4files)
 
 #to set the name of the file
 yt.set_filename('GeeksforGeeks Video')
