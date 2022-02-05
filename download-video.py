@@ -1,5 +1,6 @@
 import requests
 import json
+import sys
 
 url = "https://youtube-downloader9.p.rapidapi.com/"
 
@@ -12,10 +13,12 @@ def main():
 #   video_format = input()
 #   video_id = input()
 #   video_url = url + video_id + "/" + video_format
-  video_url = url + ${{ github.event.inputs.video_format }} + "/" + ${{ github.event.inputs.video_format }}  
+  video_url = url + sys.argv[2] + "/" + sys.argv[1] 
   response = requests.request("GET", video_url, headers=headers)
   video = response.json()[0]["url"]
   print(video)
   requests.get(video)
 
-main()
+
+if __name__ == "__main__":
+    main()
