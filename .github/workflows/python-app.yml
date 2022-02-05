@@ -32,4 +32,4 @@ jobs:
         echo "Video Format: ${{github.event.inputs.video_format}}"
         echo "Video ID: ${{github.event.inputs.video_id}}"
     - name: Run Test
-      run: python download-video.py
+      run: python -m download-video.py ${{github.event.inputs.video_format}} ${{github.event.inputs.video_id}}
