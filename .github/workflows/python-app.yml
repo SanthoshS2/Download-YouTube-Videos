@@ -9,13 +9,13 @@ on:
    inputs:
      video_format:
         description: "videoonly/audioonly/videoandaudio(Video Format)"
-        required: false
+        required: true
      video_id:
         description: "Video ID"
-        required: false
+        required: true
      video_url:
         description: "Video URL"
-        required: true
+        required: false
 jobs:
   build:
 
@@ -34,4 +34,4 @@ jobs:
         echo "Video Format: ${{github.event.inputs.video_format}}"
         echo "Video ID: ${{github.event.inputs.video_id}}"
     - name: Run Test
-      run: python -m youtube-video ${{github.event.inputs.video_url}}
+      run: python -m download-video ${{github.event.inputs.video_format}} ${{github.event.inputs.video_id}}
